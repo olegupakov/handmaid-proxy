@@ -122,7 +122,19 @@ exports.isRejected = function (hostDomain) {
    'z.cdn.adbetnet.com',
    'm.addthisedge.com',
    's7.addthis.com',
-   'an.yandex.ru'
+   'an.yandex.ru',
+   'click.zmctrack.net',
+   'aax-us-east.amazon-adsystem.com',
+   'ir-na.amazon-adsystem.com',
+   'z-na.amazon-adsystem.com',
+   'fls-na.amazon-adsystem.com',
+   'content.adriver.ru',
+   'ecmchat.com',
+   'm.loadercdn.net',
+   'm.loadercdn.com',
+   'autolinkmaker.itunes.apple.com',
+   'ad.mail.ru',
+   'www.acint.net'
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
