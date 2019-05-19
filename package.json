@@ -1,0 +1,12 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "proxy",
+  "main": "index.js",
+  "author": "olegu",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy": "^1.17.0",
+    "url": "^0.11.0"
+  }
+}
