@@ -134,7 +134,18 @@ exports.isRejected = function (hostDomain) {
    'm.loadercdn.com',
    'autolinkmaker.itunes.apple.com',
    'ad.mail.ru',
-   'www.acint.net'
+   'www.acint.net',
+   'ua1xbet.com',
+   'web.redhelper.ru',
+   'edge13.streamformular.cc',
+   'edge05.streamformular.cc',
+   'unmuncong.com',
+   'refpaumckl.top',
+   '1xredwaoi.world',
+   'bm-az-2.irsdn.net',
+   'cdn.irsdn.net',
+   'z.cdn.braun634.com',
+   'analyticsq.com'
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
