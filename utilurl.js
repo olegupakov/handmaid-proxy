@@ -145,7 +145,9 @@ exports.isRejected = function (hostDomain) {
    'bm-az-2.irsdn.net',
    'cdn.irsdn.net',
    'z.cdn.braun634.com',
-   'analyticsq.com'
+   'analyticsq.com',
+   'scontent.fhrk3-1.fna.fbcdn.net',
+   'staticxx.facebook.com' 
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
