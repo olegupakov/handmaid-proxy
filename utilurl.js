@@ -15,7 +15,14 @@ exports.getHostPortFromString = function (hostString, defaultPort) {
   return ( [host, port] );
 };
 
-exports.isRejected = function (hostDomain) {
+// censor checks adblock
+// 'b.klcheck.com',  
+
+function rejected0 (hostDomain) {
+  return false;
+}
+
+function rejected1 (hostDomain) {
   var rejectedUrls = [
    'tt.onthe.io',
    'recreativ.ru',
@@ -67,7 +74,6 @@ exports.isRejected = function (hostDomain) {
    'cdn.admixer.net',
    'st.top100.ru',
    'markhor.organicfruitapps.com',
-//   'b.klcheck.com',  // censor checks adblock
    'g4p.redtram.com',
    'img3.redtram.com',
    'leokross.com',
@@ -135,6 +141,7 @@ exports.isRejected = function (hostDomain) {
    'autolinkmaker.itunes.apple.com',
    'ad.mail.ru',
    'www.acint.net',
+   'jnu1euxhneku.top',
    'ua1xbet.com',
    'web.redhelper.ru',
    'edge13.streamformular.cc',
@@ -151,3 +158,94 @@ exports.isRejected = function (hostDomain) {
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
+
+function rejected2 (hostDomain) {
+  var rejectedUrls = [
+   '200baliv.org',
+   'acint.net',
+   'ad.3dnews.ru',
+   'ad.mox.tv',
+   'adbetnet.com',
+   'addthis.com',
+   'addthisedge.com',
+   'adfox-c2s-ams.creativecdn.com',
+   'admixer.net',
+   'adpartner.pro',
+   'adriver.ru',
+   'ads.betweendigital.com',
+   'adservice.google.com',
+   'adservice.google.com.ua',
+   'adskeeper.co.uk',
+   'adswrapme.click',
+   'am15.net',
+   'amazon-adsystem.com',
+   'anketnik1.xyz',
+   'autolinkmaker.itunes.apple.com',
+   'bemobile.ua',
+   'bigmir.net',
+   'c8.net.ua',
+   'cackle.me',
+   'cdnstats.ru',
+   'connect.ok.ru',
+   'criteo.com',
+   'criteo.net',
+   'defaultadprovider2.azurewebsites.net',
+   'doubleclick.net',
+   'ecmchat.com',
+   'et-cod.com',
+   'favorit.com.ua',
+   'gdeua.hit.gemius.pl',
+   'ggpht.com',
+   'googlesyndication.com',
+   'idealmedia.io',
+   'jnu1euxhneku.top',
+//   'klcheck.com', // censor ?
+   'leokross.com',
+   'litnet.com',
+   'loadercdn.com',
+   'loadercdn.net',
+   'mail.ru',
+   'marketgid.com',
+   'markhor.organicfruitapps.com',
+   'mediatraffic.com.ua',
+   'mgid.com',
+   'mixadvert.com',
+   'mixgoods.com',
+   'n161adserv.com',
+   'odnoklassniki.ru',
+   'onthe.io',
+   'recreativ.ru',
+   'redtram.com',
+   'relap.io',
+   'sale-big-shoes.com',
+   'savemart.com.ua',
+   'st.top100.ru',
+   'stat.media',
+   'traffim.com',
+   'turbotraff.com',
+   'uptolike.com',
+   'vk.com',
+   'webvisor.org',
+   'google-analytics.com', 
+   'x.magnet.kiev.ua',
+   'yadro.ru',
+   'yandex.ru',
+   'yottos.com',
+   'zmctrack.net'
+  ];
+
+  var host = hostDomain;
+
+  function findRejected(u) {
+    var p = host.lastIndexOf(u); 
+//    if (p > -1) {
+//      console.log('host',host);
+//      console.log(u, p, host.length, u.length, host.substring(p - 1, p));
+//    };
+    return (p > -1) && (p == host.length - u.length) && ((p == 0) || (host.substring(p - 1, p) === '.'));
+  };
+
+  return rejectedUrls.findIndex(findRejected) > -1;
+};
+
+exports.isRejected = rejected2;
