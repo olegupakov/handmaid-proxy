@@ -141,7 +141,18 @@ function rejected1 (hostDomain) {
    'autolinkmaker.itunes.apple.com',
    'ad.mail.ru',
    'www.acint.net',
-   'jnu1euxhneku.top'
+   'jnu1euxhneku.top',
+   'ua1xbet.com',
+   'web.redhelper.ru',
+   'edge13.streamformular.cc',
+   'edge05.streamformular.cc',
+   'unmuncong.com',
+   'refpaumckl.top',
+   '1xredwaoi.world',
+   'bm-az-2.irsdn.net',
+   'cdn.irsdn.net',
+   'z.cdn.braun634.com',
+   'analyticsq.com'
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
