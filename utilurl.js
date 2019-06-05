@@ -153,8 +153,8 @@ function rejected1 (hostDomain) {
    'cdn.irsdn.net',
    'z.cdn.braun634.com',
    'analyticsq.com',
-   'scontent.fhrk3-1.fna.fbcdn.net',
-   'staticxx.facebook.com' 
+   'scontent.fhrk3-1.fna.fbcdn.net'
+//   'staticxx.facebook.com' 
   ];
   return rejectedUrls.indexOf(hostDomain) > -1;
 };
@@ -179,6 +179,7 @@ function rejected2 (hostDomain) {
    'adswrapme.click',
    'am15.net',
    'amazon-adsystem.com',
+   'analyticsq.com',
    'anketnik1.xyz',
    'autolinkmaker.itunes.apple.com',
    'bemobile.ua',
@@ -194,9 +195,11 @@ function rejected2 (hostDomain) {
    'ecmchat.com',
    'et-cod.com',
    'favorit.com.ua',
+   'fna.fbcdn.net',
    'gdeua.hit.gemius.pl',
    'ggpht.com',
    'googlesyndication.com',
+   'google-analytics.com', 
    'idealmedia.io',
    'jnu1euxhneku.top',
 //   'klcheck.com', // censor ?
@@ -221,12 +224,13 @@ function rejected2 (hostDomain) {
    'savemart.com.ua',
    'st.top100.ru',
    'stat.media',
+//   'staticxx.facebook.com',
    'traffim.com',
    'turbotraff.com',
+   'twimg.com',
    'uptolike.com',
    'vk.com',
    'webvisor.org',
-   'google-analytics.com', 
    'x.magnet.kiev.ua',
    'yadro.ru',
    'yandex.ru',
