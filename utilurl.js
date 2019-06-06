@@ -86,11 +86,13 @@ function rejected1 (hostDomain) {
    'n161adserv.com',
    'odnoklassniki.ru',
    'onthe.io',
+   'pushlat.com',
    'rambler.ru',
    'recreativ.ru',
    'redtram.com',
    'relap.io',
    'rontar.com',
+   'rtmark.net',
    'rutarget.ru',
    'sale-big-shoes.com',
    'savemart.com.ua',
@@ -109,7 +111,11 @@ function rejected1 (hostDomain) {
    'yandex.ocsp-responder.com',
    'yandex.net',
    'yottos.com',
-   'zmctrack.net'
+   'zmctrack.net',
+   'braun634.com',
+   'irsdn.net',
+   'myfastcdn.com',
+   'virtualworldsland.com'
   ];
 
   var host = hostDomain;
