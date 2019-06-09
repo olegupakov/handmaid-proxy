@@ -28,6 +28,7 @@ function rejected1 (hostDomain) {
    'acint.net',
    'ad.3dnews.ru',
    'ad.mox.tv',
+   'ad.360yield.com',
    'adbetnet.com',
    'addthis.com',
    'addthisedge.com',
@@ -35,6 +36,7 @@ function rejected1 (hostDomain) {
    'admixer.net',
    'adpartner.pro',
    'adriver.ru',
+   'advertur.ru',
    'ads.betweendigital.com',
    'adservice.google.com',
    'adservice.google.com.ua',
@@ -61,7 +63,6 @@ function rejected1 (hostDomain) {
    'et-cod.com',
    'exchange.informer.ua',
    'favorit.com.ua',
-   'fna.fbcdn.net',
    'gdeua.hit.gemius.pl',
    'ggpht.com',
    'googlesyndication.com',
@@ -115,7 +116,9 @@ function rejected1 (hostDomain) {
    'braun634.com',
    'irsdn.net',
    'myfastcdn.com',
-   'virtualworldsland.com'
+   'virtualworldsland.com',
+   'alexametrics.com',
+   'neteye.ru'
   ];
 
   var host = hostDomain;

@@ -55,6 +55,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
     console.log("https://" + hostDomain);
 
     var proxySocket = new net.Socket({allowHalfOpen:true});
+
     proxySocket.connect(port, hostDomain, function () {
     //    stream.write(req.url + "\n");
 //        console.log('connect');
@@ -69,62 +70,100 @@ server.addListener('connect', function (req, socket, bodyhead) {
   //    console.log("data ", req.url);
 //      console.log("proxySocket.data");
   //    console.log("socket.connecting=",socket.connecting);
-      socket.write(chunk);
+      try {
+        socket.write(chunk);
+      } catch(e) {
+          console.log('try/catch proxy data:',e);
+      }
 //      console.log("proxySocket.data end");
     });
 
     proxySocket.on('end', function () {
 //      console.log("proxySocket.end");
   //    console.log("socket.connecting=",socket.connecting);
-      socket.end();
+      try {
+        socket.end();
+      } catch(e) {
+          console.log('try/catch proxy end:',e);
+      }
     //  console.log("proxySocket.end end");
     });
 
     proxySocket.on('finish', () => {
 //      console.log("proxySocket.finish");
-      socket.destroy();
+      try {
+        socket.destroy();
+      } catch(e) {
+          console.log('try/catch proxy finish:',e);
+      }
     });
 
     proxySocket.on('error', function () {
 //      console.log("Event Error on proxySocket: ", req.url);
   //    console.log("socket.connecting=",socket.connecting);
-      socket.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
-      socket.end();
+      try {
+        socket.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
+        socket.end();
+      } catch(e) {
+          console.log('try/catch proxy error:',e);
+      }
     //  console.log("error.end end");
     });
+
+     proxySocket.on('timeout', function(){
+        console.log("proxySocket.timeout!");
+      //Your Code Here
+  //    console.log("socket.disconnect end");
+     });
 
     socket.on('data', function (chunk) {
 //      console.log("socket.on data");
   //    console.log("proxySocket.connecting=",proxySocket.connecting);
-      proxySocket.write(chunk);
+      try {
+        proxySocket.write(chunk);
+      } catch(e) {
+          console.log('try/catch data:',e);
+      }
     //  console.log("socket.on data end");
     });
 
     socket.on('end', function () {
 //      console.log("socket.end");
   //    console.log("proxySocket.connecting=",proxySocket.connecting);
-      proxySocket.end();
+      try {
+        proxySocket.end();
+      } catch(e) {
+          console.log('try/catch end:',e);
+      }
 //      console.log("socket.end end");
     });                                 
 
     socket.on('finish', () => {
 //      console.log("socket.finish");
-      proxySocket.destroy();
+      try {
+        proxySocket.destroy();
+      } catch(e) {
+          console.log('try/catch finish:',e);
+      }
     });
 
     socket.on('error', function () {
   //    console.log("Event Error on socket: ", req.url);
 //      console.log("proxySocket.connecting=",proxySocket.connecting);
    //   proxySocket.end();                                    
-      proxySocket.destroy();
+      try {
+        proxySocket.destroy();
+      } catch(e) {
+          console.log('try/catch error:',e);
+      }
 //      console.log("socket.error end");
     });
 
-//    socket.on('disconnect', function(){
-  //    console.log("socket.disconnect");
+     socket.on('timeout', function(){
+        console.log("socket.timeout!");
       //Your Code Here
   //    console.log("socket.disconnect end");
-  //  });
+     });
 
   };
 });
