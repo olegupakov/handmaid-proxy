@@ -102,7 +102,6 @@ function rejected1 (hostDomain) {
    'tns-counter.ru',
    'traffim.com',
    'turbotraff.com',
-   'twimg.com',
    'uptolike.com',
    'vk.com',
    'webvisor.org',
@@ -118,7 +117,8 @@ function rejected1 (hostDomain) {
    'myfastcdn.com',
    'virtualworldsland.com',
    'alexametrics.com',
-   'neteye.ru'
+   'neteye.ru',
+   'l-stat.livejournal.net'
   ];
 
   var host = hostDomain;

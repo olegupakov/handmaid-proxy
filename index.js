@@ -24,9 +24,13 @@ var server = http.createServer(function (req, res) {
 
     proxy.on("error", function (err, req, res) {
       console.log("proxy error", err);
-      res.write("PROXY ERROR\n\n");
-      res.write(JSON.stringify(err));
-      res.end();
+      res.writeHead(500, {
+        'Content-Type': 'text/plain'
+      });    
+      res.end('Something went wrong. And we are reporting a custom error message.');
+//      res.status(500).write(err.Error);
+//      res.write("Content-Type: text/plain; charset=utf-8\r\n");
+//      res.end();
     });
 
     proxy.web(req, res, {target: target});
