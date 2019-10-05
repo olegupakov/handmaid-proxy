@@ -37,6 +37,7 @@ function rejected1 (hostDomain) {
    'adpartner.pro',
    'adriver.ru',
    'advertur.ru',
+   'ads.qs2tgy.ru',
    'ads.betweendigital.com',
    'adservice.google.com',
    'adservice.google.com.ua',
@@ -116,9 +117,20 @@ function rejected1 (hostDomain) {
    'irsdn.net',
    'myfastcdn.com',
    'virtualworldsland.com',
+   'vk.me',
    'alexametrics.com',
    'neteye.ru',
-   'l-stat.livejournal.net'
+   'l-stat.livejournal.net',
+   'vir7on.news',
+   'virt0n.news',
+   'franecki.net',
+   'protovid.com',
+   'iqoption.com',
+   'rotatemediajoin.win',
+   'ad4xh85llhcbfis8.com',
+   'greedseed.world',
+   'reyden-x.com',
+   'aj1058.online'
   ];
 
   var host = hostDomain;

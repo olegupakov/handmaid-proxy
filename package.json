@@ -6,7 +6,9 @@
   "author": "olegu",
   "license": "ISC",
   "dependencies": {
-    "http-proxy": "^1.17.0",
+    "connect": "^3.7.0",
+    "harmon": "^1.4.3",
+    "http-proxy": "^1.18.0",
     "url": "^0.11.0"
   }
 }

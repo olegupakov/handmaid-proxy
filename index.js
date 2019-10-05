@@ -24,16 +24,30 @@ var server = http.createServer(function (req, res) {
 
     proxy.on("error", function (err, req, res) {
       console.log("proxy error", err);
-      res.writeHead(500, {
-        'Content-Type': 'text/plain'
-      });    
+//      res.writeHead(500, {
+  //      'Content-Type': 'text/plain'
+    //  });    
       res.end('Something went wrong. And we are reporting a custom error message.');
 //      res.status(500).write(err.Error);
 //      res.write("Content-Type: text/plain; charset=utf-8\r\n");
 //      res.end();
     });
 
-    proxy.web(req, res, {target: target});
+   proxy.on('proxyRes', function (proxyRes, req, res) {
+//        var body = new Buffer('');
+        proxyRes.on('data', function (data) {
+//            console.log("data res from proxied server:", data);
+//            body = Buffer.concat([body, data]);
+        });
+        proxyRes.on('end', function () {
+  //          body = body.toString();
+  //          console.log("res from proxied server:");
+//            res.end("my response to cli");
+           res.end();
+        });
+    });
+
+    proxy.web(req, res, {target: target, selfHandleResponse : false});
   }
 }).on('error', (err) => {
   // handle errors here
