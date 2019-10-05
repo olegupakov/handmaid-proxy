@@ -74,6 +74,7 @@ function rejected1 (hostDomain) {
 //   'klcheck.com', // censor ?
    'kolobok.ua',
    'leokross.com',
+   'linden.kiev.ua',
    'litnet.com',
    'loadercdn.com',
    'loadercdn.net',
@@ -119,7 +120,10 @@ function rejected1 (hostDomain) {
    'virtualworldsland.com',
    'alexametrics.com',
    'neteye.ru',
-   'l-stat.livejournal.net'
+   'l-stat.livejournal.net',
+   'vir7on.news',
+   'jmk5uut.online',
+   'iwqzrm.com'
   ];
 
   var host = hostDomain;
