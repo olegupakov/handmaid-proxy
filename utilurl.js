@@ -39,6 +39,7 @@ function rejected1 (hostDomain) {
    'advertur.ru',
    'ads.qs2tgy.ru',
    'ads.betweendigital.com',
+   'ads.adfox.ru',
    'adservice.google.com',
    'adservice.google.com.ua',
    'adskeeper.co.uk',
