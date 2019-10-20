@@ -1,29 +1,6 @@
 var regex_hostport = /^([^:]+)(:([0-9]+))?$/;
 
-exports.getHostPortFromString = function (hostString, defaultPort) {
-  var host = hostString;
-  var port = defaultPort;
-
-  var result = regex_hostport.exec(hostString);
-  if (result != null) {
-    host = result[1];
-    if (result[2] != null) {
-      port = result[3];
-    }
-  }
-
-  return ( [host, port] );
-};
-
-// censor checks adblock
-// 'b.klcheck.com',  
-
-function rejected0 (hostDomain) {
-  return false;
-}
-
-function rejected1 (hostDomain) {
-  var rejectedUrls = [
+var rejectedUrls = [
    '200baliv.org',
    'acint.net',
    'ad.3dnews.ru',
@@ -72,7 +49,7 @@ function rejected1 (hostDomain) {
    'google-analytics.com', 
    'idealmedia.io',
    'jnu1euxhneku.top',
-//   'klcheck.com', // censor ?
+   'klcheck.com', // censor ?
    'kolobok.ua',
    'leokross.com',
    'linden.kiev.ua',
@@ -134,13 +111,51 @@ function rejected1 (hostDomain) {
    'reyden-x.com',
    'aj1058.online',
    'jmk5uut.online',
-   'iwqzrm.com'
+   'iwqzrm.com',
+   'pinterest.com',
+   'stakanchiki.com.ua',
+   'phosphorus.wwww.kinogo.cc',
+   'creativecdn.com',
+   'esputnik.com',
+   'advarkads.com',
+   'beroll.ru',
+   'buzzoola.com',
+   'adnxs.com',
+   'tyt.me',
+   'beeline.ru',
+   'mts.ru',
+   'adspeed.net',
+   'digitaltarget.ru',
+   'aidata.io',
+   'taboola.com',
+   'gtarcade.com'
   ];
 
-  var host = hostDomain;
+exports.getHostPortFromString = function (hostString, defaultPort) {
+  let host = hostString;
+  let port = defaultPort;
+
+  let result = regex_hostport.exec(hostString);
+  if (result != null) {
+    host = result[1];
+    if (result[2] != null) {
+      port = result[3];
+    }
+  }
+
+  return ( [host, port] );
+};
+
+function rejected0 (hostDomain) {
+  return false;
+}
+
+function rejected1 (hostDomain) {
+
+  let host = hostDomain;
 
   function findRejected(u) {
-    var p = host.lastIndexOf(u); 
+    let p = host.lastIndexOf(u); 
     return (p > -1) && (p == host.length - u.length) && ((p == 0) || (host.substring(p - 1, p) === '.'));
   };
 
