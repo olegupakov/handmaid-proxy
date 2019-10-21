@@ -66,7 +66,7 @@ if (url.includes('petrimazepa.com')) {
 
     debugger;
 
-    var p = document.querySelector("table tbody tr");
+    var p = document.querySelector("table tbody");
     removeDiv(p);
 
   }, 750);
