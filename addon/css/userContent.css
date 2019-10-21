@@ -1,0 +1,48 @@
+@-moz-document domain(petrimazepa.com) {
+  body {
+    font-family: Courier New !important; 
+  }
+}
+@-moz-document domain(liga.net) {
+  body {
+    font-family: Courier New !important; 
+  }
+}
+@-moz-document domain(ain.ua) {
+  body {
+    font-family: Courier New !important; 
+  }
+}
+
+@-moz-document domain(uainfo.org) {
+  body .main .text {
+    font-family: Courier New !important; 
+    font-size: 17px !important;
+  }
+  h3 {
+    font-family: Courier New !important; 
+    font-size: 17px !important;
+  }
+  #content {
+    width: 100% !important; 
+  }
+  #core_bg {
+    width: 0% !important; 
+  }
+  #rightsidebar {
+    width: 0% !important; 
+    padding: 0px 0% 0px !important; 
+  }
+  .mgbox {
+    visibility: collapse !important; 
+  }
+  ins {
+    visibility: collapse !important; 
+  }
+}
+
+@-moz-document domain(rutracker.net) {
+  body {
+    transform: scaleX(1) !important; 
+  }
+}
