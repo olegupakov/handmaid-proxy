@@ -134,7 +134,12 @@ function rejected1 (hostDomain) {
    'reyden-x.com',
    'aj1058.online',
    'jmk5uut.online',
-   'iwqzrm.com'
+   'iwqzrm.com',
+   'liveinternet.ru',
+   'crossmetrix.com',
+   'sendpulse.com',
+   '4game.com',
+   'mgid.com'
   ];
 
   var host = hostDomain;
