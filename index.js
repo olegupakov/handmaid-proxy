@@ -9,8 +9,8 @@ var utilUrl = require("./utilurl");
 //var stream = fs.createWriteStream("proxy.log", {flags:'a'});
 
 var server = http.createServer(function (req, res) {
-  var urlObj = url.parse(req.url);
-  var target = urlObj.protocol + "//" + urlObj.host;
+  let urlObj = url.parse(req.url);
+  let target = urlObj.protocol + "//" + urlObj.host;
 
   if (utilUrl.isRejected(urlObj.host)) {
 //    console.log("Rejected HTTP request for: ", urlObj.host);
@@ -20,14 +20,14 @@ var server = http.createServer(function (req, res) {
   } else {
     console.log("http://" + urlObj.host);
 
-    var proxy = httpProxy.createProxyServer({});
+    let proxy = httpProxy.createProxyServer({});
 
     proxy.on("error", function (err, req, res) {
-      console.log("proxy error", err);
+      console.log("E001", err);
 //      res.writeHead(500, {
   //      'Content-Type': 'text/plain'
     //  });    
-      res.end('Something went wrong. And we are reporting a custom error message.');
+//      res.end('Something went wrong. And we are reporting a custom error message.');
 //      res.status(500).write(err.Error);
 //      res.write("Content-Type: text/plain; charset=utf-8\r\n");
 //      res.end();
@@ -50,6 +50,7 @@ var server = http.createServer(function (req, res) {
     proxy.web(req, res, {target: target, selfHandleResponse : false});
   }
 }).on('error', (err) => {
+  console.log("E002", err);
   // handle errors here
  // console.log('ERR MY: ', err);
   //throw err;
@@ -59,10 +60,12 @@ var server = http.createServer(function (req, res) {
   exclusive: true
 });  //this is the port your clients will connect to
 
+server.timeout = 0;
+
 server.addListener('connect', function (req, socket, bodyhead) {
-  var hostPort = utilUrl.getHostPortFromString(req.url, 443);
-  var hostDomain = hostPort[0];
-  var port = parseInt(hostPort[1]);
+  let hostPort = utilUrl.getHostPortFromString(req.url, 443);
+  let hostDomain = hostPort[0];
+  let port = parseInt(hostPort[1]);
 
   if (utilUrl.isRejected(hostDomain)) {
 //    console.log("Rejected HTTPS request for: ", hostDomain);
@@ -72,7 +75,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
   } else {
     console.log("https://" + hostDomain);
 
-    var proxySocket = new net.Socket({allowHalfOpen:true});
+    let proxySocket = new net.Socket({allowHalfOpen:true});
 
     proxySocket.connect(port, hostDomain, function () {
     //    stream.write(req.url + "\n");
