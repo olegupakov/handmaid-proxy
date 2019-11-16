@@ -133,7 +133,9 @@ var rejectedUrls = [
    'digitaltarget.ru',
    'aidata.io',
    'taboola.com',
-   'gtarcade.com'
+   'gtarcade.com',
+   'adhigh.net',
+   'jeu5erxhov.site'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
