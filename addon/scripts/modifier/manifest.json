@@ -1,0 +1,27 @@
+{
+
+  "manifest_version": 2,
+  "name": "page-modifier",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://censor.net.ua/*",
+        "https://glavnoe.ua/*",
+        "https://gagadget.com/*",
+        "https://petrimazepa.com/*"
+      ],
+      "js": [
+        "modifier.js"
+       ]
+    }
+  ],
+
+  "applications": {
+    "gecko": {
+      "id": "example@example.com"
+    }
+  }
+
+}

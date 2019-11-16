@@ -112,6 +112,11 @@ var rejectedUrls = [
    'aj1058.online',
    'jmk5uut.online',
    'iwqzrm.com',
+   'liveinternet.ru',
+   'crossmetrix.com',
+   'sendpulse.com',
+   '4game.com',
+   'mgid.com',
    'pinterest.com',
    'stakanchiki.com.ua',
    'phosphorus.wwww.kinogo.cc',
@@ -128,7 +133,9 @@ var rejectedUrls = [
    'digitaltarget.ru',
    'aidata.io',
    'taboola.com',
-   'gtarcade.com'
+   'gtarcade.com',
+   'adhigh.net',
+   'jeu5erxhov.site'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
