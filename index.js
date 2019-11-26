@@ -8,6 +8,8 @@ var utilUrl = require("./utilurl");
 
 //var stream = fs.createWriteStream("proxy.log", {flags:'a'});
 
+process.title = "Proxy Server";
+
 var server = http.createServer(function (req, res) {
   let urlObj = url.parse(req.url);
   let target = urlObj.protocol + "//" + urlObj.host;
