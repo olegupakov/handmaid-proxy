@@ -135,7 +135,8 @@ var rejectedUrls = [
    'taboola.com',
    'gtarcade.com',
    'adhigh.net',
-   'jeu5erxhov.site'
+   'jeu5erxhov.site',
+   'bongacams.com'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
