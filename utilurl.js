@@ -137,7 +137,8 @@ var rejectedUrls = [
    'jnu1euxhneku.top',
    'bne16a3c.top',
    'jm056ut0.top',
-   'bd01qzzjnqt0.top'
+   'bd01qzzjnqt0.top',
+   'bongacams.com'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {

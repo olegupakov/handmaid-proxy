@@ -125,7 +125,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
 //      console.log("Event Error on proxySocket: ", req.url);
   //    console.log("socket.connecting=",socket.connecting);
       try {
-        socket.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
+        //??? socket.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
         socket.end();
       } catch(e) {
           console.log('try/catch proxy error:',e);
@@ -134,7 +134,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
     });
 
      proxySocket.on('timeout', function(){
-        console.log("proxySocket.timeout!");
+   //     console.log("proxySocket.timeout!");
       //Your Code Here
   //    console.log("socket.disconnect end");
      });
@@ -171,7 +171,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
     });
 
     socket.on('error', function () {
-  //    console.log("Event Error on socket: ", req.url);
+//      console.log("Event Error on socket: ", req.url);
 //      console.log("proxySocket.connecting=",proxySocket.connecting);
    //   proxySocket.end();                                    
       try {
@@ -183,7 +183,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
     });
 
      socket.on('timeout', function(){
-        console.log("socket.timeout!");
+ //       console.log("socket.timeout!");
       //Your Code Here
   //    console.log("socket.disconnect end");
      });
