@@ -29,7 +29,6 @@ var rejectedUrls = [
    'autolinkmaker.itunes.apple.com',
    'bemobile.ua',
    'bigmir.net',
-   'bne16a3c.top',
    'c8.net.ua',
    'cackle.me',
    'cdnstats.ru',
@@ -48,7 +47,6 @@ var rejectedUrls = [
    'holder.com.ua',
    'google-analytics.com', 
    'idealmedia.io',
-   'jnu1euxhneku.top',
    'klcheck.com', // censor ?
    'kolobok.ua',
    'leokross.com',
@@ -135,7 +133,11 @@ var rejectedUrls = [
    'taboola.com',
    'gtarcade.com',
    'adhigh.net',
-   'jeu5erxhov.site'
+   'jeu5erxhov.site',
+   'jnu1euxhneku.top',
+   'bne16a3c.top',
+   'jm056ut0.top',
+   'bd01qzzjnqt0.top'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {

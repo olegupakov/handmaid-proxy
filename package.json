@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "http-proxy": "^1.18.0",
-    "nodemon": "^2.0.1",
+    "nodemon": "^2.0.2",
     "url": "^0.11.0"
   }
 }
