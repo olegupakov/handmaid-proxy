@@ -13,9 +13,21 @@
     font-family: Courier New !important; 
   }
 }
+@-moz-document domain(kh.vgorode.ua) {
+  body {
+    font-family: Courier New !important; 
+    font-size: 17px !important;
+  }
+}
+@-moz-document domain(tasktrack.telekom.at) {
+  body {
+    font-family: Tahoma !important; 
+    font-size: 14px !important;
+  }
+}
 
 @-moz-document domain(uainfo.org) {
-  body .main .text {
+  body .main .text, h3 {
     font-family: Courier New !important; 
     font-size: 17px !important;
   }
