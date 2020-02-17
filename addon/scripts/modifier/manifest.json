@@ -10,7 +10,8 @@
         "https://censor.net.ua/*",
         "https://glavnoe.ua/*",
         "https://gagadget.com/*",
-        "https://petrimazepa.com/*"
+        "https://petrimazepa.com/*",
+        "https://uainfo.org/*"
       ],
       "js": [
         "modifier.js"

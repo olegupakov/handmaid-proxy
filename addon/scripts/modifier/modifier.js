@@ -72,3 +72,17 @@ if (url.includes('petrimazepa.com')) {
   }, 750);
 
 }
+
+if (url.includes('uainfo.org')) {
+
+  
+  setTimeout(function(){
+
+    debugger;
+
+    var p = document.querySelector("table tbody tr");
+    removeDiv(p);
+
+  }, 750);
+
+}
