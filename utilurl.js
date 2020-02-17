@@ -134,11 +134,11 @@ var rejectedUrls = [
    'gtarcade.com',
    'adhigh.net',
    'jeu5erxhov.site',
-   'jnu1euxhneku.top',
-   'bne16a3c.top',
-   'jm056ut0.top',
-   'bd01qzzjnqt0.top',
-   'bongacams.com'
+   'bongacams.com',
+   'top',
+   'club',
+   'smi2.ru',
+   'rcvlink.com'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
