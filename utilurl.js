@@ -138,7 +138,16 @@ var rejectedUrls = [
    'top',
    'club',
    'smi2.ru',
-   'rcvlink.com'
+   'metrika-informer.com',
+   'interdevochka.org',
+   'ree16.tech',
+   'jmu1bpt0.org',
+   'syndication.twitter.com',
+   'shop',
+   'pcpro100.info',
+   'xakplant.ru',
+   'rcvlink.com',
+   'v1r70n.news'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
