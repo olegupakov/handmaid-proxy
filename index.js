@@ -156,7 +156,7 @@ server.addListener('connect', function (req, socket, bodyhead) {
       try {
         proxySocket.end();
       } catch(e) {
-          console.log('try/catch end:',e);
+          console.log('try/catch end:',e);        
       }
 //      console.log("socket.end end");
     });                                 

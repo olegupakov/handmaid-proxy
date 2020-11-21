@@ -9,8 +9,7 @@
     "start": "nodemon index.js"
   },
   "dependencies": {
-    "http-proxy": "^1.18.0",
-    "nodemon": "^2.0.2",
+    "http-proxy": "^1.18.1",
     "url": "^0.11.0"
   }
 }
