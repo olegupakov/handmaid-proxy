@@ -158,6 +158,7 @@ var rejectedUrls = [
    'nativeroll.tv',
    'seedr.com',
    'traffic-media.co.uk',
+   'rcvlink.com',
    'rcvlinks.com',
    'wwbizsrv.alibaba.com',
    'multikland.net',
@@ -173,7 +174,13 @@ var rejectedUrls = [
    'pp.userapi.com',
    'aj2208.online',
    'trafficbass.com',
-   'franeski.net'
+   'franeski.net',
+   'b2b.ainews.kz',
+   'adtelligent.com',
+   'realsrv.com',
+   'favoritua.com',
+   'interdevochka.site',
+   'citilink.ru'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
