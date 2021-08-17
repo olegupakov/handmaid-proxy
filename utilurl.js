@@ -184,7 +184,22 @@ var rejectedUrls = [
    'realsrv.com',
    'favoritua.com',
    'interdevochka.site',
-   'citilink.ru'
+   'citilink.ru',
+   'prostitutki-pitera-spb.net',
+   'theonlygames.com',
+   'webert-easylift.it',
+   'histats.com',
+   'kiski-spb.net',
+   'moevideo.biz',
+   'spylees.com',
+   'logger.moviead55.ru',
+   '8245.digital',
+   'noembed.com',
+   'laim.tv',
+   'youtube-nocookie.com',
+   'yandex.st',
+   'kinomans.website',
+   'filmskino.site'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
