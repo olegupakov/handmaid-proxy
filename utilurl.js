@@ -1,5 +1,10 @@
 var regex_hostport = /^([^:]+)(:([0-9]+))?$/;
 
+var whiteUrls = [
+  'lostfilm.top',
+  'uakino.club'
+];
+
 var rejectedUrls = [
    '200baliv.org',
    'acint.net',
@@ -162,7 +167,6 @@ var rejectedUrls = [
    'nativeroll.tv',
    'seedr.com',
    'traffic-media.co.uk',
-   'rcvlink.com',
    'rcvlinks.com',
    'wwbizsrv.alibaba.com',
    'multikland.net',
@@ -194,12 +198,91 @@ var rejectedUrls = [
    'spylees.com',
    'logger.moviead55.ru',
    '8245.digital',
-   'noembed.com',
+   //'noembed.com',
    'laim.tv',
-   'youtube-nocookie.com',
+   //'youtube-nocookie.com',
    'yandex.st',
    'kinomans.website',
-   'filmskino.site'
+   'filmskino.site',
+   'tsyndicate.com',
+   'samochki-spb.org',
+   'ads.pubmatic.com',
+   'presstarschool.com.ua',
+   'adghndou0sdh.ru',
+   'j1oxqq05ry.ru',
+   'adxzqk.com',
+   'pusher.com',
+   'hit.gemius.pl',
+   'coe.int',
+   'znctrack.net',
+   'gogletagmanager.com',
+   'vbetua.com',
+   'servetraff.com',
+   'stat.net.ixbt.com',
+   'track.adpod.in',
+   'srv224.com',
+   'pjstat.com',
+   'd.trading',
+   'metinvestholding.com',
+   'residenceseeingstanding.com',
+   'retiva-bet777.com',
+   'drift.com',
+   'patriot-coffee.com.ua',
+   // popup
+   'umh.ua',
+   'bmcdn3.com',
+   'adform.net',
+   'rubiconproject.com',
+   'pubmatic.com',
+   'biz.ua',
+   'clarity.ms',
+   'unrulymedia.com',
+   'stripchat.com',
+   'xlirdr.com',
+   'clarity.ms',
+   'twitter.com',
+   't.co',
+   'ads-twitter.com',
+   'sharethrough.com',
+   'nitropay.com',
+   'ingest.sentry.io',
+   'favbet.ua',
+   'pu020ev.com',
+   'luxeprofit.pro',
+   'poker-bet.com',
+   'plerdy.com',
+   'antillephone.com',
+   'pkmpartner.com',
+   'youradexchange.com',
+   'systeme-business.online',
+   'getpocket.com',
+   'theepsie.com',
+   'enchroe.com',
+   'datatechone.com',
+   'datatechonert.com',
+   'rd09uvxpoe.kyiv.ua',
+   'softfilesavesite.com',
+   'cosmolot.ua',
+   'worldoftanks.eu',
+   'popvalcom.com',
+   'googlesyndication.com',
+   'google-analytics.com',
+   'wabungasodaic.digital',
+   'boozifyprays.space',
+   'mediabrama.com',
+   'oovaufty.com',
+   'slotslights.net',
+   'livejasmin.com',
+   'condipexpredical.com',
+   'jwpltx.com',
+   'gnicirp.com',
+   'happydtng.online',
+   'elkazoc.online',
+   'jd01ertboake.org',
+   'arwobaton.com',
+   'condipexpredical.com',
+   'pu707ev.com',
+   'ipchanger.live'
   ];
 
 exports.getHostPortFromString = function (hostString, defaultPort) {
@@ -230,6 +313,9 @@ function rejected1 (hostDomain) {
     return (p > -1) && (p == host.length - u.length) && ((p == 0) || (host.substring(p - 1, p) === '.'));
   };
 
+  if (whiteUrls.findIndex(findRejected) > -1) {
+    return false;
+  };
   return rejectedUrls.findIndex(findRejected) > -1;
 };
 

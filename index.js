@@ -14,18 +14,19 @@ var server = http.createServer(function (req, res) {
   let urlObj = url.parse(req.url);
   let target = urlObj.protocol + "//" + urlObj.host;
 
+
   if (utilUrl.isRejected(urlObj.host)) {
-//    console.log("Rejected HTTP request for: ", urlObj.host);
+    console.log(req.socket.remoteAddress, "[reject]", "http://" + urlObj.host);
 //    res.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
     res.write("HTTP/" + req.httpVersion + " 204 No Content\r\n\r\n");
     res.end();
   } else {
-    console.log("http://" + urlObj.host);
+    console.log(req.socket.remoteAddress, "         http://" + urlObj.host);
 
     let proxy = httpProxy.createProxyServer({});
 
     proxy.on("error", function (err, req, res) {
-      console.log("E001", err);
+      console.log("E001", req.url, err);
 //      res.writeHead(500, {
   //      'Content-Type': 'text/plain'
     //  });    
@@ -57,7 +58,7 @@ var server = http.createServer(function (req, res) {
  // console.log('ERR MY: ', err);
   //throw err;
 }).listen({
-  host: 'localhost',
+  host: '127.0.0.1', //'localhost',
   port: 7000,
   exclusive: true
 });  //this is the port your clients will connect to
@@ -69,19 +70,24 @@ server.addListener('connect', function (req, socket, bodyhead) {
   let hostDomain = hostPort[0];
   let port = parseInt(hostPort[1]);
 
+  if (req.socket.remoteAddress.toString() !== '127.0.0.1' && req.socket.remoteAddress.toString() !== '::1') {
+    console.log(req.socket.remoteAddress, '403 Forbidden');
+    socket.write("HTTP/" + req.httpVersion + " 403 Forbidden\r\n\r\n");
+    socket.end();
+  } 
+  else
   if (utilUrl.isRejected(hostDomain)) {
-//    console.log("Rejected HTTPS request for: ", hostDomain);
-//    socket.write("HTTP/" + req.httpVersion + " 500 Connection error\r\n\r\n");
+    console.log(req.socket.remoteAddress, "[reject]", "https://" + hostDomain);
     socket.write("HTTP/" + req.httpVersion + " 204 No content\r\n\r\n");
     socket.end();
   } else {
-    console.log("https://" + hostDomain);
+    console.log(req.socket.remoteAddress, "         https://" + hostDomain);
 
     let proxySocket = new net.Socket({allowHalfOpen:true});
 
     proxySocket.connect(port, hostDomain, function () {
     //    stream.write(req.url + "\n");
-//        console.log('connect');
+     //   console.log(bodyhead.toString());
         proxySocket.write(bodyhead);
         socket.write("HTTP/" + req.httpVersion + " 200 Connection established\r\n\r\n");
   //      console.log('connect end');
